@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+html,
+body,
+article {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  font-size: 0.75cm;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+article {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  font-family: 'Inter', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section {
+  display: grid;
+  grid-template-rows: 70% 30%;
+  background-color: #fce296;
+}
+
+input .content-container {
+  padding-top: 1.17rem;
+  padding-inline: 3.3rem;
+
+  overflow-y: scroll;
+}
+
+/* Styling for the form */
+.content-container {
+  max-width: 50%;
+  margin: 0 auto;
+  background-color: #fcf2d5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type='text'] {
+  font-size: 0.84rem;
+  border: 1px solid rgb(107, 32, 255);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.07);
+  padding: 10px 15px;
+  width: 100%;
+  padding-block: 11px;
+  padding-inline: 22px 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  font-size: 0.97rem;
+  padding-block: 0.57rem;
+  border-bottom: 1px solid #d3d3d3;
+  cursor: pointer;
+}
+
+li label {
+  margin-left: 0.7rem;
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  cursor: pointer;
+  /* Add this line to change cursor to pointer */
+}
+
+.todo-task-done {
+  text-decoration: line-through;
+  color: #808080;
+}
+
+input[type='checkbox']:checked+label {
+  text-decoration: line-through;
+  color: #808080;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #2c3043;
+  border-top: 3px solid rgb(107, 32, 255);
+}
+
+#add-task-btn {
+  margin-left: 5px;
+  padding: 11px 20px;
+  cursor: pointer;
+  background-color: #eabf9f;
+  border-width: 0px;
+  border-top-left-radius: 22px;
+  border-bottom-left-radius: 22px;
+}
+
+#remove-all-btn {
+  margin-left: 5px;
+  padding: 11px 20px;
+  cursor: pointer;
+  background-color: #eabf9f;
+  border-width: 0px;
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 22px;
+}
+
+button:active {
+  background-color: #b68973;
+}
