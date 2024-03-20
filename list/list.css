@@ -10,9 +10,12 @@ article {
   margin: 0;
 }
 
-h1 {
+ h1 {
   font-size: 0.75cm;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: bold;
 }
 
 article {
@@ -25,33 +28,55 @@ article {
 section {
   display: grid;
   grid-template-rows: 70% 30%;
-  background-color: #fce296;
-}
-
-input .content-container {
-  padding-top: 1.17rem;
-  padding-inline: 3.3rem;
-
-  overflow-y: scroll;
+  /* background-color: #fce296; */
+    background-image: linear-gradient(to bottom right, #ffe9a0,#ffbd60);
 }
 
 /* Styling for the form */
 .content-container {
-  max-width: 50%;
-  margin: 0 auto;
-  background-color: #fcf2d5;
+  width: 500px;
+  height: 707px;
+  margin: 0 auto; /* Center horizontally */
+  background-color: #fef2cf;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(154, 128, 0, 0.689);
+  overflow-y: scroll;
+  position: fixed; /* Position fixed to keep it centered */
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
 }
+/* ::-webkit-scrollbar-corner {
+
+} */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fef2cf;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.07);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(107, 32, 255);
+  cursor: grab;
+}
+
 
 input[type='text'] {
   font-size: 0.84rem;
-  border: 1px solid rgb(107, 32, 255);
-  border-radius: 5px;
+  border: 2.5px dashed rgb(107, 32, 255);
+  border-radius: 10px;
+  outline: none;
   background-color: rgba(0, 0, 0, 0.07);
   padding: 10px 15px;
-  width: 100%;
+  width: 75%;
   padding-block: 11px;
   padding-inline: 22px 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -92,15 +117,17 @@ input[type='checkbox']:checked+label {
   color: #808080;
 }
 
-footer {
+/* footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   box-sizing: border-box;
   background-color: #2c3043;
   border-top: 3px solid rgb(107, 32, 255);
-}
+  height: 10px;
+  margin-top: auto;
+  padding: 25px;
+} */
 
 #add-task-btn {
   margin-left: 5px;
@@ -125,3 +152,12 @@ footer {
 button:active {
   background-color: #b68973;
 }
+
+hr {
+  background-color: #d3d3d3; 
+  border: none;
+  height: 1px;
+
+}
+
+
