@@ -117,17 +117,7 @@ input[type='checkbox']:checked+label {
   color: #808080;
 }
 
-/* footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  background-color: #2c3043;
-  border-top: 3px solid rgb(107, 32, 255);
-  height: 10px;
-  margin-top: auto;
-  padding: 25px;
-} */
+
 
 #add-task-btn {
   margin-left: 5px;
@@ -137,6 +127,34 @@ input[type='checkbox']:checked+label {
   border-width: 0px;
   border-top-left-radius: 22px;
   border-bottom-left-radius: 22px;
+}
+#add-task-btn:hover {
+  background-color: #b68973;
+  transition: 0.5s;
+}
+
+#export-shop-list {
+  margin-left: 5px;
+  padding: 11px 20px;
+  cursor: pointer;
+  background-color: #eabf9f;
+  border-width: 0px;
+}
+#export-shop-list:hover {
+  background-color: #b68973;
+  transition: 0.5s;
+}
+
+#remove-select-btn {
+  margin-left: 5px;
+  padding: 11px 20px;
+  cursor: pointer;
+  background-color: #eabf9f;
+  border-width: 0px;
+}
+#remove-select-btn:hover {
+  background-color: #b68973;
+  transition: 0.5s;
 }
 
 #remove-all-btn {
@@ -148,9 +166,9 @@ input[type='checkbox']:checked+label {
   border-top-right-radius: 22px;
   border-bottom-right-radius: 22px;
 }
-
-button:active {
+#remove-all-btn:hover {
   background-color: #b68973;
+  transition: 0.5s;
 }
 
 hr {
@@ -159,5 +177,4 @@ hr {
   height: 1px;
 
 }
-
 

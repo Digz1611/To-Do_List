@@ -7,6 +7,10 @@ const localAddTaskBtn = document.getElementById("add-task-btn");
 
 const localRemoveTasksBtn = document.getElementById("remove-all-btn");
 
+const localRemoveSelectBtn = document.getElementById("remove-select-btn");
+
+const exportShopListBtn = document.getElementById("export-shop-list");
+
 
 // Function to update tasks in localStorage
 function updateStorageTasks() {
@@ -89,3 +93,39 @@ function createTodoLiElements(todoArray, sectionType) {
     return liElement;
   });
 }
+
+
+
+localRemoveSelectBtn.addEventListener("click", () => {
+  // Filter out the tasks that are not checked
+  const uncheckedTasks = localTodoTasksArray.filter(todo => !todo.checked);
+
+  // Update the localTodoTasksArray with only unchecked tasks
+  localTodoTasksArray.length = 0;
+  localTodoTasksArray.push(...uncheckedTasks);
+
+  // Update the UI and storage
+  const todoLiElements = createTodoLiElements(localTodoTasksArray, "local");
+  localTodosContainer.replaceChildren(...todoLiElements);
+  updateStorageTasks();
+});
+
+exportShopListBtn.addEventListener("click", () => {
+  // Filter out the items that start with "get "
+  const shoppingListItems = localTodoTasksArray
+    .filter(todo => todo.text.toLowerCase().startsWith("get "))
+    .map(todo => " - " + todo.text.substring(4)); // Add " - " before each item
+
+  // Create a blob with the shopping list items
+  const blob = new Blob([shoppingListItems.join("\n")], { type: "text/plain" });
+
+  // Create a download link and trigger the download
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "Shopping-List.txt";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
