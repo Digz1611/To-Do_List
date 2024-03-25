@@ -34,8 +34,10 @@ section {
 
 /* Styling for the form */
 .content-container {
-  width: 500px;
-  height: 707px;
+  max-width: 100%; /* Allow the container to be responsive */
+  max-height: calc(100vw * 1.414); /* Set the max-height based on the aspect ratio */
+  width: 500px; /* Set a fixed width for larger screens */
+  height: 707px; /* Set a fixed height for larger screens */
   margin: 0 auto; /* Center horizontally */
   background-color: #fef2cf;
   padding: 20px;
@@ -43,10 +45,19 @@ section {
   box-shadow: 0 0 10px rgba(154, 128, 0, 0.689);
   overflow-y: scroll;
   position: fixed; /* Position fixed to keep it centered */
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+@media (max-width: 500px) {
+  .content-container {
+    width: 90%; /* Adjust the width for smaller screens */
+    max-height: none; /* Disable max-height for smaller screens */
+    height: auto; /* Allow the height to be determined by the content */
+  }
+}
+
 /* ::-webkit-scrollbar-corner {
 
 } */
